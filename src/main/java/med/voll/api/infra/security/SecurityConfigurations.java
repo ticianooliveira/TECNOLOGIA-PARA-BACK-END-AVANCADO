@@ -16,7 +16,7 @@ import org.springframework.security.web.SecurityFilterChain;
 public class SecurityConfigurations {
     @Bean
     public SecurityFilterChain
-    securityFilterChain(HttpSecurity http)
+                securityFilterChain(HttpSecurity http)
             throws Exception {
         return http.csrf(AbstractHttpConfigurer::disable)
                 .sessionManagement(sm -> sm.sessionCreationPolicy
@@ -25,14 +25,14 @@ public class SecurityConfigurations {
     }
     @Bean
     public AuthenticationManager authenticationManager
-            (AuthenticationConfiguration configuration)
+          (AuthenticationConfiguration configuration)
             throws Exception{
-        return configuration.getAuthenticationManager();
+         return configuration.getAuthenticationManager();
     }
 
     @Bean
     public PasswordEncoder passwordEncoder() {
-        return  new BCryptPasswordEncoder();
+          return  new BCryptPasswordEncoder();
     }
 
 
